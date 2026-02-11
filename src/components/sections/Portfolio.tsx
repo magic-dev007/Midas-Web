@@ -20,7 +20,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "TrueCar",
     category: "Web Application / Mobile",
     description: "A digital car-buying marketplace that gives shoppers transparent pricing insights and connects them with a nationwide network of certified dealers for new and used vehicles. Features include price transparency with 'what others paid' data, end-to-end digital retailing journey including research, pricing, financing, trade-in, and delivery options, plus a certified dealer network providing upfront, personalized offers to buyers nationwide.",
-    imageUrl: "src/images/truecar.png",
+    imageUrl: "/images/truecar.png",
     link: "https://truecar.com/",
     appLinks: {
       android: "https://play.google.com/store/apps/details?id=com.truecar.mobile.android.consumer&pli=1",
@@ -31,14 +31,14 @@ const portfolioItems: PortfolioItem[] = [
     title: "GetFluently",
     category: "AI / Automation",
     description: "An AI-driven automation platform designed to streamline communication, task management, and workflow productivity for remote teams. Features include smart automation engine with Python and Django, Slack & Notion integration, AI summarization & insights using natural language processing, custom workflow builder, and notification & reporting system. Built with React.js frontend, PostgreSQL database, and Dockerized microservices hosted on AWS.",
-    imageUrl: "src/images/fluenty.png",
+    imageUrl: "/images/fluenty.png",
     link: "https://getfluently.app/"
   },
   {
     title: "Federal Market Index",
     category: "Data Engineering / Analytics",
     description: "A custom stock market index platform that replaces a manual Excel-based workflow with an automated, web-based dashboard. Features include automated index engine with Python backend scheduled via cron, real-time data updates from Alpha Vantage API, interactive performance charts with Chart.js, and responsive analytics dashboard built with Next.js and Tailwind CSS. Transforms manual Excel models into professional, automated index platforms with live market data.",
-    imageUrl: "src/images/market.png",
+    imageUrl: "/images/market.png",
     link: "https://www.fedmarketwatch.com/",
     videoLink: "https://youtu.be/MOYa0mxh138"
   },
@@ -46,21 +46,21 @@ const portfolioItems: PortfolioItem[] = [
     title: "Cast It Reach",
     category: "SaaS Platform",
     description: "A premium reality casting platform that powers the applicant intake and selection process for major unscripted TV formats including 'Big Brother,' 'Got Talent,' 'The Traitors,' 'MasterChef,' and 'The Chase.' Features include end-to-end casting pipeline centralizing online applications and candidate profiles, customizable workflows for open calls and screening, applicant communication hub with built-in tools, and scalable & secure SaaS infrastructure designed for high-volume global shows with strong security and data-privacy controls.",
-    imageUrl: "src/images/cashit.png",
+    imageUrl: "/images/cashit.png",
     link: "https://www.castitreach.com/"
   },
   {
     title: "The Swarm",
     category: "Data Platform / AI",
     description: "The Relationship Data Company that curates a rich dataset of 580M profiles with daily job changes, 100M companies with fundraising data, and a unique relationship mapping AI engine. Built for builders and investors, The Swarm provides comprehensive relationship intelligence through advanced data curation, real-time job change tracking, company fundraising insights, and AI-powered relationship mapping to help businesses make data-driven decisions and identify key connections in their industry.",
-    imageUrl: "src/images/theswarm.png",
+    imageUrl: "/images/theswarm.png",
     link: "https://www.theswarm.com/"
   },
   {
     title: "Jeevz",
     category: "Platform / SaaS",
     description: "A modern platform solution designed to streamline business operations and enhance productivity. Built with scalable architecture and intuitive user experience, Jeevz provides comprehensive tools and services to help organizations optimize their workflows, manage resources efficiently, and drive growth through innovative technology solutions.",
-    imageUrl: "src/images/drivers.png",
+    imageUrl: "/images/drivers.png",
     link: "https://jeevz.com/"
   }
 ];

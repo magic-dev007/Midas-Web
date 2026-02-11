@@ -144,11 +144,11 @@ const Payments = () => {
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { name: "Stripe", icon: "src/images/stripe.jpeg" },
-                  { name: "PayPal", icon: "src/images/paypal.png" },
-                  { name: "Zelle", icon: "src/images/zelle.png" },
-                  { name: "Venmo", icon: "src/images/venmo.png" },
-                  { name: "Wise", icon: "src/images/wise.png" }
+                  { name: "Stripe", icon: "/images/stripe.jpeg" },
+                  { name: "PayPal", icon: "/images/paypal.png" },
+                  { name: "Zelle", icon: "/images/zelle.png" },
+                  { name: "Venmo", icon: "/images/venmo.png" },
+                  { name: "Wise", icon: "/images/wise.png" }
                 ].map((method) => (
                   <div
                     key={method.name}

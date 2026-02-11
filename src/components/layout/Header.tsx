@@ -36,7 +36,7 @@ const Header = () => {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3">
-          <img src="src/images/logo.png" alt="Midas Global Tech" className="h-9 w-9" />
+          <img src="/images/logo.png" alt="Midas Global Tech" className="h-9 w-9" />
           <div className="leading-tight">
             <div className="text-sm font-semibold tracking-[0.18em] text-midas-gold-soft">
               MIDAS GLOBAL TECH
