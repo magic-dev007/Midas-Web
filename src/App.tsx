@@ -10,6 +10,7 @@ import Portfolio from "./components/sections/Portfolio";
 import Experts from "./components/sections/Experts";
 import Payments from "./components/sections/Payments";
 import Contact from "./components/sections/Contact";
+import MaintenanceSupport from "./components/sections/MaintenanceSupport";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Portfolio />
           <Experts />
           <Payments />
+          <MaintenanceSupport />
           <Contact />
         </main>
         <Footer />

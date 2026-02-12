@@ -21,7 +21,7 @@ const Payments = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-midas-gold/20">
-                <DollarSign className="h-5 w-5 text-midas-gold-soft" />
+                <DollarSign className="h-5 w-5 text-green-500" />
               </div>
               <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100 transition-colors duration-300">Payment Structure</h3>
             </div>

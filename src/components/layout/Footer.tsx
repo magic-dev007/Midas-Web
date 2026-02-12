@@ -1,7 +1,16 @@
+import { useState } from "react";
 import { Mail } from "lucide-react";
+import PrivacyPolicyModal from "../shared/PrivacyPolicyModal";
+import TermsOfServiceModal from "../shared/TermsOfServiceModal";
+import CookiePolicyModal from "../shared/CookiePolicyModal";
 
 const Footer = () => {
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+  const [isTermsOpen, setIsTermsOpen] = useState(false);
+  const [isCookieOpen, setIsCookieOpen] = useState(false);
+
   return (
+    <>
     <footer className="border-t border-slate-200 bg-white dark:border-slate-800/70 dark:bg-slate-950/90 transition-colors duration-300">
       <div className="mx-auto max-w-6xl px-6 py-8">
         <div className="grid gap-8 md:grid-cols-4 mb-8">
@@ -27,6 +36,7 @@ const Footer = () => {
               <li><a href="#team" className="hover:text-midas-gold-soft transition">Team</a></li>
               <li><a href="#payments" className="hover:text-midas-gold-soft transition">Payments</a></li>
               <li><a href="#contact" className="hover:text-midas-gold-soft transition">Contact</a></li>
+              <li><a href="#maintenance" className="hover:text-midas-gold-soft transition">Maintenance & Support</a></li>
             </ul>
           </div>
 
@@ -58,15 +68,27 @@ const Footer = () => {
             © {new Date().getFullYear()} Midas Global Tech. All rights reserved.
           </div>
           <div className="flex flex-wrap gap-4">
-            <a href="#" className="hover:text-midas-gold-soft transition">Privacy Policy</a>
+            <button type="button" onClick={() => setIsPrivacyOpen(true)} className="hover:text-midas-gold-soft transition">
+              Privacy Policy
+            </button>
             <span>•</span>
-            <a href="#" className="hover:text-midas-gold-soft transition">Terms of Service</a>
+            <button type="button" onClick={() => setIsTermsOpen(true)} className="hover:text-midas-gold-soft transition">
+              Terms of Service
+            </button>
+            <span>•</span>
+            <button type="button" onClick={() => setIsCookieOpen(true)} className="hover:text-midas-gold-soft transition">
+              Cookie Policy
+            </button>
             <span>•</span>
             <a href="#contact" className="hover:text-midas-gold-soft transition">Contact Us</a>
           </div>
         </div>
       </div>
     </footer>
+    <PrivacyPolicyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
+    <TermsOfServiceModal isOpen={isTermsOpen} onClose={() => setIsTermsOpen(false)} />
+    <CookiePolicyModal isOpen={isCookieOpen} onClose={() => setIsCookieOpen(false)} />
+    </>
   );
 };
 
