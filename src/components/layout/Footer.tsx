@@ -35,8 +35,8 @@ const Footer = () => {
               <li><a href="#portfolio" className="hover:text-midas-gold-soft transition">Portfolio</a></li>
               <li><a href="#team" className="hover:text-midas-gold-soft transition">Team</a></li>
               <li><a href="#payments" className="hover:text-midas-gold-soft transition">Payments</a></li>
-              <li><a href="#contact" className="hover:text-midas-gold-soft transition">Contact</a></li>
               <li><a href="#maintenance" className="hover:text-midas-gold-soft transition">Maintenance & Support</a></li>
+              <li><a href="#contact" className="hover:text-midas-gold-soft transition">Contact</a></li>
             </ul>
           </div>
 

@@ -20,9 +20,15 @@ const Contact = () => {
 
     setStatus("sending");
     setErrorMessage("");
+    console.log("Sending message to:", { name, email, message });
 
     try {
-      const res = await fetch("/api/send-quote", {
+      // In development, /api runs only on Vercel. Use VITE_API_BASE (e.g. your Vercel URL) to test the form locally.
+      const apiBase =
+        import.meta.env.DEV && import.meta.env.VITE_API_BASE
+          ? import.meta.env.VITE_API_BASE.replace(/\/$/, "")
+          : "";
+      const res = await fetch(`${apiBase}/api/send-quote`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
