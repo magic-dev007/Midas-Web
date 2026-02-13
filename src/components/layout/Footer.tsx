@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail } from "lucide-react";
 import PrivacyPolicyModal from "../shared/PrivacyPolicyModal";
 import TermsOfServiceModal from "../shared/TermsOfServiceModal";
 import CookiePolicyModal from "../shared/CookiePolicyModal";
+import { OPEN_COOKIE_POLICY_EVENT } from "../shared/CookieConsent";
 
 const Footer = () => {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [isTermsOpen, setIsTermsOpen] = useState(false);
   const [isCookieOpen, setIsCookieOpen] = useState(false);
+
+  useEffect(() => {
+    const openCookiePolicy = () => setIsCookieOpen(true);
+    window.addEventListener(OPEN_COOKIE_POLICY_EVENT, openCookiePolicy);
+    return () => window.removeEventListener(OPEN_COOKIE_POLICY_EVENT, openCookiePolicy);
+  }, []);
 
   return (
     <>
@@ -78,6 +85,10 @@ const Footer = () => {
             <span>•</span>
             <button type="button" onClick={() => setIsCookieOpen(true)} className="hover:text-midas-gold-soft transition">
               Cookie Policy
+            </button>
+            <span>•</span>
+            <button type="button" onClick={() => window.dispatchEvent(new Event("show-cookie-preferences"))} className="hover:text-midas-gold-soft transition">
+              Cookie preferences
             </button>
             <span>•</span>
             <a href="#contact" className="hover:text-midas-gold-soft transition">Contact Us</a>

@@ -1,5 +1,6 @@
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import CookieConsent from "./components/shared/CookieConsent";
 import Hero from "./components/sections/Hero";
 import WhoWeAre from "./components/sections/WhoWeAre";
 import WhyChoose from "./components/sections/WhyChoose";
@@ -33,6 +34,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <CookieConsent />
     </div>
   );
 }
