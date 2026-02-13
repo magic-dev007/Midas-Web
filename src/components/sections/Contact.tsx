@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Globe2, Mail, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Globe2, Mail, Loader2, AlertCircle } from "lucide-react";
 import SectionShell from "../shared/SectionShell";
 import Field from "../shared/Field";
 
@@ -40,8 +40,9 @@ const Contact = () => {
         setErrorMessage(data.error || "Something went wrong. Please email us directly.");
         return;
       }
-      setStatus("success");
       form.reset();
+      window.location.hash = "thank-you";
+      window.scrollTo(0, 0);
     } catch {
       setStatus("error");
       setErrorMessage("Network error. Please try again or email us directly.");
@@ -66,12 +67,6 @@ const Contact = () => {
         >
           <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-midas-gold/10 blur-3xl" />
           <div className="relative">
-          {status === "success" && (
-            <div className="flex items-center gap-3 rounded-lg border border-green-500/30 bg-green-500/10 px-4 py-3 text-green-700 dark:text-green-300">
-              <CheckCircle2 className="h-5 w-5 flex-shrink-0" />
-              <p className="text-sm font-medium">Thanks! We've received your message and will reply within 12 hours. Check your email for a confirmation.</p>
-            </div>
-          )}
           {status === "error" && (
             <div className="flex items-start gap-3 rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-3 text-red-700 dark:text-red-300">
               <AlertCircle className="h-5 w-5 flex-shrink-0 mt-0.5" />

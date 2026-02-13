@@ -57,7 +57,7 @@ export default async function handler(req, res) {
         <p><strong>Email:</strong> ${safeEmail}</p>
         <p><strong>Message:</strong></p>
         <pre style="white-space: pre-wrap; background: #f4f4f4; padding: 12px; border-radius: 8px;">${safeMessage}</pre>
-        <p><em>Reply within 12 hours.</em></p>
+        <p><em>Reply within 24 hours.</em></p>
       `,
     });
 
@@ -67,7 +67,7 @@ export default async function handler(req, res) {
       subject: "We received your message – Midas Global Tech",
       html: `
         <p>Hi ${safeName},</p>
-        <p>Thank you for reaching out to Midas Global Tech. We have received your message and will get back to you within <strong>12 hours</strong>.</p>
+        <p>Thank you for reaching out to Midas Global Tech. We have received your message and will get back to you within <strong>24 hours</strong>.</p>
         <p>If your request is urgent, you can also email us directly at <a href="mailto:${TEAM_EMAIL}">${TEAM_EMAIL}</a>.</p>
         <p>Best regards,<br/>The Midas Global Tech Team</p>
       `,
