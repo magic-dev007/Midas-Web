@@ -1,8 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import { Globe2, Mail, Loader2, AlertCircle } from "lucide-react";
 import SectionShell from "../shared/SectionShell";
 import Field from "../shared/Field";
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID ?? "";
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID ?? "";
+const EMAILJS_TEMPLATE_REPLY_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_REPLY_ID ?? "";
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "";
 
 type SubmitStatus = "idle" | "sending" | "success" | "error";
 
@@ -18,34 +24,46 @@ const Contact = () => {
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim();
     if (!name || !email || !message) return;
 
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      setStatus("error");
+      setErrorMessage("Email is not configured. Please email us directly.");
+      return;
+    }
+
     setStatus("sending");
     setErrorMessage("");
-    console.log("Sending message to:", { name, email, message });
 
     try {
-      // In development, /api runs only on Vercel. Use VITE_API_BASE (e.g. your Vercel URL) to test the form locally.
-      const apiBase =
-        import.meta.env.DEV && import.meta.env.VITE_API_BASE
-          ? import.meta.env.VITE_API_BASE.replace(/\/$/, "")
-          : "";
-      const res = await fetch(`${apiBase}/api/send-quote`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
-      });
-      const data = await res.json().catch(() => ({}));
+      const templateParams = {
+        name: name,
+        email: email,
+        message,
+      };
 
-      if (!res.ok) {
-        setStatus("error");
-        setErrorMessage(data.error || "Something went wrong. Please email us directly.");
-        return;
-      }
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+
+      // if (EMAILJS_TEMPLATE_REPLY_ID) {
+      //   await new Promise((r) => setTimeout(r, 500));
+      //   await emailjs.send(
+      //     EMAILJS_SERVICE_ID,
+      //     EMAILJS_TEMPLATE_REPLY_ID,
+      //     { from_name: name, to_email: email },
+      //     { publicKey: EMAILJS_PUBLIC_KEY }
+      //   );
+      // }
+
       form.reset();
       window.location.hash = "thank-you";
       window.scrollTo(0, 0);
-    } catch {
+    } catch (err) {
       setStatus("error");
-      setErrorMessage("Network error. Please try again or email us directly.");
+      const msg = err instanceof Error ? err.message : "Failed to send.";
+      setErrorMessage(msg || "Something went wrong. Please email us directly.");
     }
   };
 
