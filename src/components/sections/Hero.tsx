@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   CheckCircle2,
@@ -48,13 +49,13 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.32, duration: 0.45 }}
           >
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="btn-shimmer group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-midas-gold to-midas-gold-soft px-8 py-4 text-base font-semibold text-slate-950 shadow-glow-gold transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-midas-gold/50"
             >
               Let's Work Together
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
           </motion.div>
 
         </motion.div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import PrivacyPolicyModal from "../shared/PrivacyPolicyModal";
 import TermsOfServiceModal from "../shared/TermsOfServiceModal";
@@ -36,25 +37,25 @@ const Footer = () => {
           <div>
             <h4 className="text-xs font-semibold text-slate-800 dark:text-slate-200 mb-3 uppercase tracking-[0.1em] transition-colors duration-300">Quick Links</h4>
             <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400 transition-colors duration-300">
-              <li><a href="#about" className="hover:text-midas-gold-soft transition">About Us</a></li>
-              <li><a href="#services" className="hover:text-midas-gold-soft transition">Services</a></li>
-              <li><a href="#technologies" className="hover:text-midas-gold-soft transition">Technologies</a></li>
-              <li><a href="#portfolio" className="hover:text-midas-gold-soft transition">Portfolio</a></li>
-              <li><a href="#team" className="hover:text-midas-gold-soft transition">Team</a></li>
-              <li><a href="#payments" className="hover:text-midas-gold-soft transition">Payments</a></li>
-              <li><a href="#maintenance" className="hover:text-midas-gold-soft transition">Maintenance & Support</a></li>
-              <li><a href="#contact" className="hover:text-midas-gold-soft transition">Contact</a></li>
+              <li><Link to="/about" className="hover:text-midas-gold-soft transition">About Us</Link></li>
+              <li><Link to="/services" className="hover:text-midas-gold-soft transition">Services</Link></li>
+              <li><Link to="/technologies" className="hover:text-midas-gold-soft transition">Technologies</Link></li>
+              <li><Link to="/portfolio" className="hover:text-midas-gold-soft transition">Portfolio</Link></li>
+              <li><Link to="/team" className="hover:text-midas-gold-soft transition">Team</Link></li>
+              <li><Link to="/payments" className="hover:text-midas-gold-soft transition">Payments</Link></li>
+              <li><Link to="/maintenance" className="hover:text-midas-gold-soft transition">Maintenance & Support</Link></li>
+              <li><Link to="/contact" className="hover:text-midas-gold-soft transition">Contact</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-xs font-semibold text-slate-800 dark:text-slate-200 mb-3 uppercase tracking-[0.1em] transition-colors duration-300">Services</h4>
             <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400 transition-colors duration-300">
-              <li><a href="#services" className="hover:text-midas-gold-soft transition">Web Development</a></li>
-              <li><a href="#services" className="hover:text-midas-gold-soft transition">SaaS Product Engineering</a></li>
-              <li><a href="#services" className="hover:text-midas-gold-soft transition">Blockchain Solutions</a></li>
-              <li><a href="#services" className="hover:text-midas-gold-soft transition">Cloud & DevOps</a></li>
-              <li><a href="#services" className="hover:text-midas-gold-soft transition">AI & Automation Engineering</a></li>
+              <li><Link to="/services" className="hover:text-midas-gold-soft transition">Web Development</Link></li>
+              <li><Link to="/services" className="hover:text-midas-gold-soft transition">SaaS Product Engineering</Link></li>
+              <li><Link to="/services" className="hover:text-midas-gold-soft transition">Blockchain Solutions</Link></li>
+              <li><Link to="/services" className="hover:text-midas-gold-soft transition">Cloud & DevOps</Link></li>
+              <li><Link to="/services" className="hover:text-midas-gold-soft transition">AI & Automation Engineering</Link></li>
             </ul>
           </div>
 
@@ -91,7 +92,7 @@ const Footer = () => {
               Cookie preferences
             </button>
             <span>•</span>
-            <a href="#contact" className="hover:text-midas-gold-soft transition">Contact Us</a>
+            <Link to="/contact" className="hover:text-midas-gold-soft transition">Contact Us</Link>
           </div>
         </div>
       </div>

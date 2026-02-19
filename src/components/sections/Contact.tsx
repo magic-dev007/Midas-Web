@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Globe2, Mail, Loader2, AlertCircle } from "lucide-react";
@@ -13,6 +14,7 @@ const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY ?? "";
 type SubmitStatus = "idle" | "sending" | "success" | "error";
 
 const Contact = () => {
+  const navigate = useNavigate();
   const [status, setStatus] = useState<SubmitStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -58,7 +60,7 @@ const Contact = () => {
       // }
 
       form.reset();
-      window.location.hash = "thank-you";
+      navigate("/thank-you");
       window.scrollTo(0, 0);
     } catch (err) {
       setStatus("error");

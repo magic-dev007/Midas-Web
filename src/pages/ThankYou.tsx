@@ -1,12 +1,8 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { CheckCircle2, ArrowLeft, Mail } from "lucide-react";
 
 const ThankYou = () => {
-  const goHome = (e: React.MouseEvent) => {
-    e.preventDefault();
-    window.location.hash = "";
-    window.scrollTo(0, 0);
-  };
 
   return (
     <div className="relative flex min-h-[70vh] flex-col items-center justify-center px-6 py-16">
@@ -38,14 +34,13 @@ const ThankYou = () => {
           Check your email for a confirmation. If it&apos;s urgent, you can also contact us directly.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:gap-3">
-          <a
-            href="#"
-            onClick={goHome}
+          <Link
+            to="/"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-midas-gold px-6 py-3 text-sm font-semibold text-slate-950 shadow-glow-gold transition-all hover:bg-midas-gold-soft hover:-translate-y-0.5"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to home
-          </a>
+          </Link>
           <a
             href="mailto:midasglobaltech.us@gmail.com"
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-transparent px-6 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-midas-gold/40 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"

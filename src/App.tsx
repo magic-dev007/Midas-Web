@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import CookieConsent from "./components/shared/CookieConsent";
@@ -15,40 +16,49 @@ import Payments from "./components/sections/Payments";
 import Contact from "./components/sections/Contact";
 import MaintenanceSupport from "./components/sections/MaintenanceSupport";
 
-function App() {
-  const [isThankYou, setIsThankYou] = useState(
-    typeof window !== "undefined" && window.location.hash === "#thank-you"
-  );
+const SECTION_IDS = ["about", "services", "technologies", "portfolio", "team", "payments", "maintenance", "contact", "top"] as const;
+
+function HomePage() {
+  const { pathname } = useLocation();
+  const section = pathname === "/" ? null : pathname.slice(1).toLowerCase();
 
   useEffect(() => {
-    const check = () => setIsThankYou(window.location.hash === "#thank-you");
-    window.addEventListener("hashchange", check);
-    return () => window.removeEventListener("hashchange", check);
-  }, []);
+    if (!section || !SECTION_IDS.includes(section as typeof SECTION_IDS[number])) return;
+    const el = document.getElementById(section);
+    if (el) {
+      window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
+    }
+  }, [section]);
 
+  return (
+    <>
+      <Hero />
+      <WhoWeAre />
+      <WhyChoose />
+      <TeamExpertise />
+      <Services />
+      <Technology />
+      <Portfolio />
+      <Experts />
+      <Payments />
+      <MaintenanceSupport />
+      <Contact />
+    </>
+  );
+}
+
+function App() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300">
       <div className="pointer-events-none fixed inset-0 bg-hero-grid-light opacity-60 dark:bg-hero-grid dark:opacity-80 transition-opacity duration-300" />
       <div className="relative z-10 flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">
-          {isThankYou ? (
-            <ThankYou />
-          ) : (
-            <>
-              <Hero />
-              <WhoWeAre />
-              <WhyChoose />
-              <TeamExpertise />
-              <Services />
-              <Technology />
-              <Portfolio />
-              <Experts />
-              <Payments />
-              <MaintenanceSupport />
-              <Contact />
-            </>
-          )}
+          <Routes>
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/:section" element={<HomePage />} />
+          </Routes>
         </main>
         <Footer />
       </div>
