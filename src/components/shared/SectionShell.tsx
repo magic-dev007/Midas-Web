@@ -7,7 +7,7 @@ type SectionShellProps = {
   title: string;
   description?: string;
   children: ReactNode;
-  /** Viewport amount (0–1) needed to trigger section animation; default 0.3. Use 0.05 for sections at bottom of page. */
+  /** Viewport amount (0–1) needed to trigger section animation; default 0.05 for reliable Safari/iOS. Use 0.3 for stricter trigger. */
   viewportAmount?: number;
 };
 
@@ -17,16 +17,16 @@ const SectionShell = ({
   title,
   description,
   children,
-  viewportAmount = 0.3
+  viewportAmount = 0.05
 }: SectionShellProps) => {
   return (
     <motion.section
       id={id}
-      className="border-b border-slate-200 dark:border-slate-800/70 scroll-mt-24 transition-colors duration-300"
-      initial={{ opacity: 0, y: 32 }}
+      className="border-b border-slate-200 dark:border-slate-800/70 scroll-mt-24 transition-colors duration-300 overflow-hidden"
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: viewportAmount }}
-      transition={{ duration: 0.6, ease: [0.21, 0.6, 0.35, 1] }}
+      transition={{ duration: 0.5, ease: [0.21, 0.6, 0.35, 1] }}
     >
       <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
         <motion.div

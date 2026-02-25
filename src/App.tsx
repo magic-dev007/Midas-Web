@@ -49,9 +49,9 @@ function HomePage() {
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300">
+    <div className="min-h-screen min-h-[100dvh] bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300">
       <div className="pointer-events-none fixed inset-0 bg-hero-grid-light opacity-60 dark:bg-hero-grid dark:opacity-80 transition-opacity duration-300" />
-      <div className="relative z-10 flex min-h-screen flex-col">
+      <div className="relative z-10 flex min-h-screen min-h-[100dvh] flex-col">
         <Header />
         <main className="flex-1">
           <Routes>
