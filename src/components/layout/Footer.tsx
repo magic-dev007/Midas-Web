@@ -62,11 +62,11 @@ const Footer = () => {
           <div>
             <h4 className="text-xs font-semibold text-slate-800 dark:text-slate-200 mb-3 uppercase tracking-[0.1em] transition-colors duration-300">Get In Touch</h4>
             <a
-              href="mailto:midasglobaltech.us@gmail.com"
+              href="mailto:contact@midasglobaltech.com"
               className="inline-flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 hover:text-midas-gold-soft transition mb-4"
             >
               <Mail className="h-3.5 w-3.5" />
-              midasglobaltech.us@gmail.com
+              contact@midasglobaltech.com
             </a>
           </div>
         </div>

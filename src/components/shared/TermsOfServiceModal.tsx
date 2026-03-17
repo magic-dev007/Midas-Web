@@ -234,7 +234,7 @@ const TermsOfServiceModal = ({ isOpen, onClose }: TermsOfServiceModalProps) => {
             </h3>
             <p className="mb-2">For questions, legal inquiries, or support, contact us at:</p>
             <ul className="list-none mb-8 space-y-1">
-              <li className="flex items-center gap-2"><Mail className="h-3 w-3 text-midas-gold-soft flex-shrink-0" /><a href="mailto:midasglobaltech.us@gmail.com" className="text-midas-gold-soft hover:underline">midasglobaltech.us@gmail.com</a></li>
+              <li className="flex items-center gap-2"><Mail className="h-3 w-3 text-midas-gold-soft flex-shrink-0" /><a href="mailto:contact@midasglobaltech.com" className="text-midas-gold-soft hover:underline">contact@midasglobaltech.com</a></li>
               <li className="flex items-center gap-2"><Globe className="h-3 w-3 text-midas-gold-soft flex-shrink-0" /><a href="https://midasglobaltech.com" target="_blank" rel="noopener noreferrer" className="text-midas-gold-soft hover:underline">midasglobaltech.com</a></li>
             </ul>
           </div>

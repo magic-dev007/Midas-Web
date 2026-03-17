@@ -182,7 +182,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
               <li>Request deletion</li>
               <li>Opt out of communications</li>
             </ul>
-            <p className="mb-6">To exercise these rights, contact us at midasglobaltech.us@gmail.com</p>
+            <p className="mb-6">To exercise these rights, contact us at contact@midasglobaltech.com</p>
 
             <h3 className="mt-8 mb-3 flex items-center gap-2 font-semibold text-slate-900 dark:text-slate-100">
               <Globe className="h-4 w-4 text-midas-gold-soft flex-shrink-0" />
@@ -208,7 +208,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: PrivacyPolicyModalProps) => {
             </h3>
             <p className="mb-2">If you have questions about this Privacy Policy or your data, please contact us:</p>
             <ul className="list-none mb-8 space-y-1">
-              <li className="flex items-center gap-2"><Mail className="h-3 w-3 text-midas-gold-soft flex-shrink-0" /><a href="mailto:midasglobaltech.us@gmail.com" className="text-midas-gold-soft hover:underline">midasglobaltech.us@gmail.com</a></li>
+              <li className="flex items-center gap-2"><Mail className="h-3 w-3 text-midas-gold-soft flex-shrink-0" /><a href="mailto:contact@midasglobaltech.com" className="text-midas-gold-soft hover:underline">contact@midasglobaltech.com</a></li>
               <li className="flex items-center gap-2"><Globe className="h-3 w-3 text-midas-gold-soft flex-shrink-0" /><a href="https://midasglobaltech.com" target="_blank" rel="noopener noreferrer" className="text-midas-gold-soft hover:underline">midasglobaltech.com</a></li>
             </ul>
           </div>

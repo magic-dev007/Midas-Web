@@ -93,7 +93,7 @@ const Contact = () => {
               <div className="text-sm">
                 <p className="font-medium">Could not send</p>
                 <p className="mt-0.5">{errorMessage}</p>
-                <a href="mailto:midasglobaltech.us@gmail.com" className="mt-2 inline-block font-medium underline">Email us directly</a>
+                <a href="mailto:contact@midasglobaltech.com" className="mt-2 inline-block font-medium underline">Email us directly</a>
               </div>
             </div>
           )}
@@ -161,13 +161,13 @@ const Contact = () => {
                 Or reach us directly
               </h3>
               <a
-                href="mailto:midasglobaltech.us@gmail.com"
+                href="mailto:contact@midasglobaltech.com"
                 className="inline-flex items-center gap-3 rounded-xl border border-slate-300 bg-slate-100 px-4 py-3 text-base text-slate-800 hover:border-midas-gold/40 hover:bg-slate-200 transition-all group dark:border-slate-700/70 dark:bg-slate-800/50 dark:text-slate-200 dark:hover:bg-slate-800/70"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-midas-gold/20 group-hover:bg-midas-gold/30 transition-colors">
                   <Mail className="h-5 w-5 text-midas-gold-soft" />
                 </div>
-                <span className="font-medium">midasglobaltech.us@gmail.com</span>
+                <span className="font-medium">contact@midasglobaltech.com</span>
               </a>
             </div>
           </motion.div>

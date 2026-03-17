@@ -42,7 +42,7 @@ const ThankYou = () => {
             Back to home
           </Link>
           <a
-            href="mailto:midasglobaltech.us@gmail.com"
+            href="mailto:contact@midasglobaltech.com"
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-transparent px-6 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-midas-gold/40 hover:bg-slate-100 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"
           >
             <Mail className="h-4 w-4" />

@@ -194,8 +194,8 @@ const Payments = () => {
           </div>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-4 transition-colors duration-300">
             For billing or payment assistance, contact us at{" "}
-            <a href="mailto:midasglobaltech.us@gmail.com" className="text-midas-gold-soft hover:underline">
-              midasglobaltech.us@gmail.com
+            <a href="mailto:contact@midasglobaltech.com" className="text-midas-gold-soft hover:underline">
+              contact@midasglobaltech.com
             </a>
           </p>
         </motion.div>

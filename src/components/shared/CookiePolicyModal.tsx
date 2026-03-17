@@ -170,7 +170,7 @@ const CookiePolicyModal = ({ isOpen, onClose }: CookiePolicyModalProps) => {
             <ul className="list-none mb-8 space-y-1">
               <li className="flex items-center gap-2">
                 <Mail className="h-3 w-3 text-midas-gold-soft flex-shrink-0" />
-                <a href="mailto:midasglobaltech.us@gmail.com" className="text-midas-gold-soft hover:underline">midasglobaltech.us@gmail.com</a></li>
+                <a href="mailto:contact@midasglobaltech.com" className="text-midas-gold-soft hover:underline">contact@midasglobaltech.com</a></li>
             </ul>
           </div>
           <div className="absolute left-0 right-3 bottom-0 h-6 bg-gradient-to-t from-white to-transparent dark:from-slate-900 pointer-events-none z-10" />
